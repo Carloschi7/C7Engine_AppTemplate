@@ -13,7 +13,7 @@ add_executable(${PROJECT_NAME} src/Application.cpp)
 
 target_link_libraries(${PROJECT_NAME}
 	opengl32.lib
-	${ENGINE_PATH}/Dependencies/ASSIMP/bin/assimp.lib
+	${ENGINE_PATH}/Dependencies/ASSIMP/bin/assimp-vc143-mtd.lib
 	${ENGINE_PATH}/Dependencies/GLEW/lib/Release/Win32/glew32s.lib
 	${ENGINE_PATH}/Dependencies/GLFW/lib-vc2019/glfw3.lib
 	${ENGINE_BUILD_PATH}/Debug/C7Engine.lib)
