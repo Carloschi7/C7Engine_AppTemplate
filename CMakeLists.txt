@@ -26,4 +26,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 	${ENGINE_PATH}/Dependencies/GLFW
 	${ENGINE_PATH}/Dependencies/GLEW)
 
+file(COPY ${PROJECT_SOURCE_DIR}/assimpdll/assimp-vc143-mtd.dll DESTINATION ${PROJECT_BINARY_DIR})
+
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
