@@ -16,7 +16,7 @@ target_link_libraries(${PROJECT_NAME}
 	${ENGINE_PATH}/Dependencies/ASSIMP/bin/assimp-vc143-mtd.lib
 	${ENGINE_PATH}/Dependencies/GLEW/lib/Release/Win32/glew32s.lib
 	${ENGINE_PATH}/Dependencies/GLFW/lib-vc2019/glfw3.lib
-	${ENGINE_BUILD_PATH}/Debug/C7Engine.lib)
+	${ENGINE_BUILD_PATH}/$(Configuration)/C7Engine.lib)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
 	${ENGINE_PATH}/engine 
