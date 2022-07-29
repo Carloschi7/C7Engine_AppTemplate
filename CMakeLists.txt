@@ -30,5 +30,6 @@ file(COPY ${PROJECT_SOURCE_DIR}/assimpdll/assimp-vc143-mtd.dll DESTINATION ${PRO
 file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/basic.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
 file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/basic_cubemap.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
 file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/basic_texture.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
+file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/skybox_reflect.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
