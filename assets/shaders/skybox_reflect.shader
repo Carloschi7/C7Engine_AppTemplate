@@ -13,9 +13,9 @@ out vec3 Norm;
 
 void main()
 {
-	Pos = pos;
+	Pos = vec3(model * vec4(pos, 1.0f));
 	Norm = normalize(norm);
-	gl_Position = proj * view * model * vec4(pos, 1.0f);
+	gl_Position = proj * view * vec4(Pos, 1.0f);
 }
 
 #shader fragment
