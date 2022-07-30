@@ -1,3 +1,4 @@
+#THIS FILE NEEDS TO BE RUN IN ADMINISTRATOR MODE(for the dir symlink defined below)
 cmake_minimum_required(VERSION 3.12)
 
 if("${APP_NAME}" STREQUAL "")
@@ -27,9 +28,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 	${ENGINE_PATH}/Dependencies/GLEW)
 
 file(COPY ${PROJECT_SOURCE_DIR}/assimpdll/assimp-vc143-mtd.dll DESTINATION ${PROJECT_BINARY_DIR})
-file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/basic.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
-file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/basic_cubemap.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
-file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/basic_texture.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
-file(COPY ${PROJECT_SOURCE_DIR}/assets/shaders/skybox_reflect.shader DESTINATION ${PROJECT_BINARY_DIR}/assets/shaders)
+
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/assets)
+#Creates a link to the source shader directory
+execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ${PROJECT_SOURCE_DIR}/assets/shaders ${PROJECT_BINARY_DIR}/assets/shaders)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
