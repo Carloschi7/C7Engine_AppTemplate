@@ -79,7 +79,6 @@ void Application::OnUserRun()
     Shader shd("assets/shaders/basic_texture.shader");
     shd.UniformMat4f(m_Camera.GetProjMatrix(), "proj");
     
-    
     Texture tex("assets/images/parquet.jpg");
     tex.Bind();
     shd.Uniform1i(0, "texture1");
@@ -100,15 +99,41 @@ void Application::OnUserRun()
     obj4.Rotate(glm::radians(70.0f), glm::vec3(0.0f, 1.0f, 1.0f));
     obj4.Scale(2.0f);
 
+    //Create depth buffer
+    uint32_t i = 0;
+    FrameBuffer depth_buffer(1000, 1000, FrameBufferType::DEPTH_ATTACHMENT);
+    Shader depth_shd("assets/shaders/depth.shader");
+
+    glm::vec3 lightPos(0.0f, 30.0f, 0.0f);
+    glm::mat4 lightProj = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, 1.0f, 100.0f);
+    glm::mat4 lightView = glm::lookAt(glm::vec3(0.0f, 80.0f, 0.01f), glm::vec3(0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    depth_shd.UniformMat4f(lightProj * lightView, "space");
+
     m_Window.SetVsync(true);
     glEnable(GL_DEPTH_TEST);
 
     while (!m_Window.ShouldClose())
     {
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        //Drawing to depth texture
+        depth_buffer.Bind();
+        glViewport(0, 0, 1000, 1000);
+        glClear(GL_DEPTH_BUFFER_BIT);
+        obj.Draw(depth_shd);
+        obj2.Draw(depth_shd);
+        obj3.Draw(depth_shd);
+        obj4.Draw(depth_shd);
 
+        //Drawing to screen
+        FrameBuffer::BindDefault();
+        depth_buffer.BindFrameTexture();
+        //tex.Bind();
+        shd.Uniform1i(0, "texture1");
+        glViewport(0, 0, 1920, 1080);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         m_Camera.ProcessInput(m_Window, 1.0);
 
+        //shd.UniformMat4f(lightProj, "proj");
+        //shd.UniformMat4f(lightView, "view");
         shd.UniformMat4f(m_Camera.GetViewMatrix(), "view");
         
 
