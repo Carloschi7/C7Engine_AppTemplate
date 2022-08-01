@@ -16,7 +16,7 @@ out vec2 TexCoord;
 void main()
 {
 	Pos = vec3(model * vec4(pos, 1.0f));
-	Norm = normalize(norm);
+	Norm = transpose(inverse(mat3(model))) * normalize(norm);
 	TexCoord = tex_coord;
 	gl_Position = proj * view * vec4(Pos, 1.0f);
 }
