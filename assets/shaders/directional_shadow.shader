@@ -56,13 +56,13 @@ void main()
 	float orientation = dot(comps.Norm, normalize(-light_direction));
 	if (orientation < 0.0f)
 	{
-		FragColor = vec4(ambient * texture_color, 1.0f);
+		FragColor = vec4(ambient * light_color * texture_color, 1.0f);
 		return;
 	}
 
 	//Calculate lighting
 	float factor = max(0.1f, orientation);
-	vec3 diffuse = (texture_color * factor);
+	vec3 diffuse = (light_color * factor);
 
 	//Shadow calculation
 	vec4 LightSpacePos = comps.PosInLightSpace;
