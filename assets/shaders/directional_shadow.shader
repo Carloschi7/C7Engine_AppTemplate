@@ -56,7 +56,7 @@ void main()
 	float orientation = dot(comps.Norm, normalize(-light_direction));
 	if (orientation < 0.0f)
 	{
-		FragColor = vec4(ambient * light_color * texture_color, 1.0f);
+		FragColor = vec4(ambient * texture_color, 1.0f);
 		return;
 	}
 
