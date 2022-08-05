@@ -24,7 +24,7 @@ void main()
 #shader fragment
 #version 330 core
 
-uniform sampler2D texture1;
+uniform sampler2D diffuse_texture;
 uniform vec3 light_pos;
 
 in vec3 Pos;
@@ -39,5 +39,5 @@ void main()
 	float brightnessMultiplier = 0.01f;
 	float brightness = pow(length(PosToLight), 2) * brightnessMultiplier;
 	float diffuse = max(0.2f, dot(Norm, normalize(PosToLight)));
-	FragColor = (texture(texture1, TexCoord) * diffuse) / brightness;
+	FragColor = (texture(diffuse_texture, TexCoord) * diffuse) / brightness;
 }

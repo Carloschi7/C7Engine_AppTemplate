@@ -84,7 +84,7 @@ void Application::OnUserRun()
     Shader shd("assets/shaders/directional_shadow.shader");
     shd.UniformMat4f(m_Camera.GetProjMatrix(), "proj");
     
-    Texture tex("assets/images/parquet.jpg");
+    Texture tex(/*Insert your custom image*/);
     
 
     Entity obj(manager3attr);
