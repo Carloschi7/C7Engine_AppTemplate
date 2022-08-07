@@ -48,11 +48,11 @@ out vec4 FragColor;
 
 void main()
 {
-	vec3 light_color = vec3(1.0f);
-	vec3 texture_color = texture(diffuse_texture, comps.TexCoord).xyz;
+	vec3 LightColor = vec3(1.0f);
+	vec3 TextureColor = texture(diffuse_texture, comps.TexCoord).xyz;
 	
 	//Calculating ambient
-	vec3 ambient = 0.05f * light_color;
+	vec3 Ambient = 0.05f * LightColor;
 
 	//Calculating diffuse
 	vec3 FragmentToLight = light_pos - comps.Pos;
@@ -61,35 +61,35 @@ void main()
 	float orientation = dot(comps.Norm, normalize(FragmentToLight));
 	if (orientation < 0.0f)
 	{
-		FragColor = vec4(ambient * texture_color, 1.0f);
+		FragColor = vec4(Ambient * TextureColor, 1.0f);
 		return;
 	}
 
 	float factor = max(0.1f, orientation);
 	float attenuationFactor = 0.01f;
 	float attenuation = pow(length(FragmentToLight), 2) * attenuationFactor;
-	vec3 diffuse = (light_color * factor) / attenuation;
+	vec3 Diffuse = (LightColor * factor) / attenuation;
 
 	//Calculating specular
 	vec3 FragmentToCamera = -normalize(camera_pos - comps.Pos);
-	vec3 reflected = reflect(FragmentToCamera, comps.Norm);
-	float spec = pow(max(dot(reflected, normalize(FragmentToLight)), 0.0f), 100);
-	vec3 specular = light_color * spec;
+	vec3 Reflected = reflect(FragmentToCamera, comps.Norm);
+	float spec = pow(max(dot(Reflected, normalize(FragmentToLight)), 0.0f), 100);
+	vec3 Specular = LightColor * spec;
 
 	//Calculating 3D shadow
-	vec3 clamped_pos = comps.PosInLightSpace.xyz / comps.PosInLightSpace.w;
-	clamped_pos = (clamped_pos + vec3(1.0f)) * 0.5f;
+	vec3 ClampedPos = comps.PosInLightSpace.xyz / comps.PosInLightSpace.w;
+	ClampedPos = (ClampedPos + vec3(1.0f)) * 0.5f;
 
-	if (clamped_pos.x < 0.0f || clamped_pos.y < 0.0f || clamped_pos.x > 1.0f || clamped_pos.y > 1.0f)
+	if (ClampedPos.x < 0.0f || ClampedPos.y < 0.0f || ClampedPos.x > 1.0f || ClampedPos.y > 1.0f)
 	{
-		FragColor = vec4((ambient + diffuse + specular) * texture_color, 1.0f);
+		FragColor = vec4((Ambient + Diffuse + Specular) * TextureColor, 1.0f);
 		return;
 	}
 
-	float current_z = clamped_pos.z - 0.01f;
-	float nearest_z = texture(depth_texture, clamped_pos.xy).r;
+	float current_z = ClampedPos.z - 0.01f;
+	float nearest_z = texture(depth_texture, ClampedPos.xy).r;
 	float shadow = (current_z > nearest_z) ? 0.0f : 1.0f;
 
-	FragColor = vec4((ambient + shadow * (diffuse + specular)) * texture_color, 1.0f);
+	FragColor = vec4((Ambient + shadow * (Diffuse + Specular)) * TextureColor, 1.0f);
 }
 
