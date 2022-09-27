@@ -18,17 +18,21 @@ the executable needs to be linked to the PATH section of Windows' environmental 
 
 
 
-2) mkdir build
+2) cd C7Engine_AppTemplate
 
 
 
-3) cd build
+3) mkdir build
+
+
+
+4) cd build
 
 
 
 (Make sure to insert your paths here, e.g. -DENGINE_PATH=D:/Engine -D...)
 
-4) cmake -DENGINE_PATH=<YourEngineSourcePath> -DENGINE_BUILD_PATH=<YourEngineBinaryPath> -A Win32 ..
+5) cmake -DENGINE_PATH=<YourEngineSourcePath> -DENGINE_BUILD_PATH=<YourEngineBinaryPath> -A Win32 ..
 
 
 
@@ -37,11 +41,11 @@ the executable needs to be linked to the PATH section of Windows' environmental 
 
 
 
-5) make (needs to be installed)
+6) make (needs to be installed)
 
 
 
 (For Windows + Visual Studio)
   
-5) (YourProjectName).sln (which opens up the project in Visual Studio, then you can follow the previous
+6) (YourProjectName).sln (which opens up the project in Visual Studio, then you can follow the previous
 points from 5) to the end)
