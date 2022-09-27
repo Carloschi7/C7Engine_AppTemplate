@@ -27,6 +27,7 @@ the executable needs to be linked to the PATH section of Windows' environmental 
 
 
 (Make sure to insert your paths here, e.g. -DENGINE_PATH=D:/Engine -D...)
+
 4) cmake -DENGINE_PATH=<YourEngineSourcePath> -DENGINE_BUILD_PATH=<YourEngineBinaryPath> -A Win32 ..
 
 
