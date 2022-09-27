@@ -42,5 +42,5 @@ the executable needs to be linked to the PATH section of Windows' environmental 
 
 (For Windows + Visual Studio)
   
-5) <YourProjectName>.sln (which opens up the project in Visual Studio, then you can follow the previous
+5) (YourProjectName).sln (which opens up the project in Visual Studio, then you can follow the previous
 points from 5) to the end)
