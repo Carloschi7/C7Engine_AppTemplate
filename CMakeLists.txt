@@ -29,8 +29,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 
 file(COPY ${PROJECT_SOURCE_DIR}/assimpdll/assimp-vc143-mtd.dll DESTINATION ${PROJECT_BINARY_DIR})
 
-file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/assets)
-#Creates a link to the source shader directory
-execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink ${PROJECT_SOURCE_DIR}/assets/shaders ${PROJECT_BINARY_DIR}/assets/shaders)
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/assets/shaders)
+#Copies the assets to the project workspace
+file(COPY assets/shaders DESTINATION assets)
+file(COPY assets/skyboxes DESTINATION assets)
+file(COPY assets/images DESTINATION assets)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
