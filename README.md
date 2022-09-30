@@ -91,23 +91,23 @@ points from 5) to the end)
 Execute the following commands(make sure to have your Ubuntu C7ENgine installation ready)
 
 
-1) `git clone https://github.com/Carloschi7/C7Engine_AppTemplate.git`
+1) `$ git clone https://github.com/Carloschi7/C7Engine_AppTemplate.git`
 
 
 
-2) `mkdir build && cd build`
+2) `$ mkdir build && cd build`
 
 
 
-3) `cmake -DENGINE_PATH="YourEngineInstallationPath" -DENGINE_BUILD_PATH="YourEngineBinaryPath" ..`
+3) `$ cmake -DENGINE_PATH="YourEngineInstallationPath" -DENGINE_BUILD_PATH="YourEngineBinaryPath" ..`
 
 
 
-4) `make`
+4) `$ make`
 
 
 
-5) `./"YourAppName"` to run it
+5) `$ ./"YourAppName"` to run it
 
 
 
