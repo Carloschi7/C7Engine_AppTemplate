@@ -86,9 +86,9 @@ points from 5) to the end)
 
 
 
-## Building on Linux
+## Building on Linux Ubuntu
 
-Execute the following commands
+Execute the following commands(make sure to have your Ubuntu C7ENgine installation ready)
 
 
 1) `git clone https://github.com/Carloschi7/C7Engine_AppTemplate.git`
