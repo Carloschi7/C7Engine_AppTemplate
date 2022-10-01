@@ -27,7 +27,7 @@ if("${VISUAL_STUDIO_DEF}" STREQUAL "Visual Studio")
 else() #default linux ubuntu for now (STILL WORK IN PROGRESS)
 
 	set(UBUNTU_LIB_PATH /usr/lib/x86_64-linux-gnu)
-	set(C7ENGINE_OPENGL_LIB ${UBUNTU_LIB_PATH}/libGL.so.1)
+	set(C7ENGINE_OPENGL_LIB ${UBUNTU_LIB_PATH}/libGL.so)
 	set(C7ENGINE_DEPENDENCIES glfw GLEW ${UBUNTU_LIB_PATH}/libassimp.so)
 	set(C7ENGINE_LIB_PATH  ${ENGINE_BUILD_PATH}/libC7Engine.so)
 endif()
