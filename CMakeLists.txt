@@ -24,7 +24,7 @@ if("${VISUAL_STUDIO_DEF}" STREQUAL "Visual Studio")
 
 	set(C7ENGINE_LIB_PATH ${ENGINE_BUILD_PATH}/$(Configuration)/C7Engine.lib)
 
-	#Pasting shared library into build dir, necessary on Windows for our current setup ppp
+	#Pasting shared library into build dir, necessary on Windows for our current setup
 	file(COPY ${PROJECT_SOURCE_DIR}/assimpdll/assimp-vc143-mtd.dll DESTINATION ${PROJECT_BINARY_DIR})
 
 else() #default linux ubuntu for now (STILL WORK IN PROGRESS)
