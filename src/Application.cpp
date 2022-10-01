@@ -3,7 +3,6 @@
 Application::Application(Window& window)
         :m_Window(window)
 {
-
 }
 
 Application::~Application()
@@ -79,12 +78,12 @@ void Application::OnUserRun()
     Shader cubeshd("assets/shaders/basic_cubemap.shader");
 
     std::vector<std::string> vec({
-        "assets/skyboxes/lake/left.jpg",
         "assets/skyboxes/lake/right.jpg",
+        "assets/skyboxes/lake/left.jpg",
         "assets/skyboxes/lake/bottom.jpg",
         "assets/skyboxes/lake/top.jpg",
+        "assets/skyboxes/lake/front.jpg",
         "assets/skyboxes/lake/back.jpg",
-        "assets/skyboxes/lake/front.jpg"
     });
     CubeMap cube(vec, 500.0f);
     cube.BindTexture(1);

@@ -1,7 +1,7 @@
 #include "../application/Application.h"
 
 Application::Application(Window& window)
-    :m_Window(window)
+        :m_Window(window)
 {
 
 }
@@ -20,47 +20,47 @@ void Application::OnUserCreate()
 void Application::OnUserRun()
 {
     float vertices[] = {
-        -10.0f, -10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
-         10.0f, -10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
-         10.0f,  10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
-         10.0f,  10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
-        -10.0f,  10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
-        -10.0f, -10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
+            -10.0f, -10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
+            10.0f, -10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
+            10.0f,  10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
+            10.0f,  10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
+            -10.0f,  10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
+            -10.0f, -10.0f, -10.0f,    0.0f, 0.0f, 1.0f,
 
-        -10.0f, -10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
-         10.0f, -10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
-         10.0f,  10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
-         10.0f,  10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
-        -10.0f,  10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
-        -10.0f, -10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
+            -10.0f, -10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
+            10.0f, -10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
+            10.0f,  10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
+            10.0f,  10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
+            -10.0f,  10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
+            -10.0f, -10.0f,  10.0f,    0.0f, 0.0f, -1.0f,
 
-        -10.0f,  10.0f,  10.0f,    -1.0f, 0.0f, 0.0f,
-        -10.0f,  10.0f, -10.0f,    -1.0f, 0.0f, 0.0f,
-        -10.0f, -10.0f, -10.0f,    -1.0f, 0.0f, 0.0f,
-        -10.0f, -10.0f, -10.0f,    -1.0f, 0.0f, 0.0f,
-        -10.0f, -10.0f,  10.0f,    -1.0f, 0.0f, 0.0f,
-        -10.0f,  10.0f,  10.0f,    -1.0f, 0.0f, 0.0f,
+            -10.0f,  10.0f,  10.0f,    -1.0f, 0.0f, 0.0f,
+            -10.0f,  10.0f, -10.0f,    -1.0f, 0.0f, 0.0f,
+            -10.0f, -10.0f, -10.0f,    -1.0f, 0.0f, 0.0f,
+            -10.0f, -10.0f, -10.0f,    -1.0f, 0.0f, 0.0f,
+            -10.0f, -10.0f,  10.0f,    -1.0f, 0.0f, 0.0f,
+            -10.0f,  10.0f,  10.0f,    -1.0f, 0.0f, 0.0f,
 
-         10.0f,  10.0f,  10.0f,    1.0f, 0.0f, 0.0f,
-         10.0f,  10.0f, -10.0f,    1.0f, 0.0f, 0.0f,
-         10.0f, -10.0f, -10.0f,    1.0f, 0.0f, 0.0f,
-         10.0f, -10.0f, -10.0f,    1.0f, 0.0f, 0.0f,
-         10.0f, -10.0f,  10.0f,    1.0f, 0.0f, 0.0f,
-         10.0f,  10.0f,  10.0f,    1.0f, 0.0f, 0.0f,
+            10.0f,  10.0f,  10.0f,    1.0f, 0.0f, 0.0f,
+            10.0f,  10.0f, -10.0f,    1.0f, 0.0f, 0.0f,
+            10.0f, -10.0f, -10.0f,    1.0f, 0.0f, 0.0f,
+            10.0f, -10.0f, -10.0f,    1.0f, 0.0f, 0.0f,
+            10.0f, -10.0f,  10.0f,    1.0f, 0.0f, 0.0f,
+            10.0f,  10.0f,  10.0f,    1.0f, 0.0f, 0.0f,
 
-        -10.0f, -10.0f, -10.0f,    0.0f, -1.0f, 0.0f,
-         10.0f, -10.0f, -10.0f,    0.0f, -1.0f, 0.0f,
-         10.0f, -10.0f,  10.0f,    0.0f, -1.0f, 0.0f,
-         10.0f, -10.0f,  10.0f,    0.0f, -1.0f, 0.0f,
-        -10.0f, -10.0f,  10.0f,    0.0f, -1.0f, 0.0f,
-        -10.0f, -10.0f, -10.0f,    0.0f, -1.0f, 0.0f,
+            -10.0f, -10.0f, -10.0f,    0.0f, -1.0f, 0.0f,
+            10.0f, -10.0f, -10.0f,    0.0f, -1.0f, 0.0f,
+            10.0f, -10.0f,  10.0f,    0.0f, -1.0f, 0.0f,
+            10.0f, -10.0f,  10.0f,    0.0f, -1.0f, 0.0f,
+            -10.0f, -10.0f,  10.0f,    0.0f, -1.0f, 0.0f,
+            -10.0f, -10.0f, -10.0f,    0.0f, -1.0f, 0.0f,
 
-        -10.0f,  10.0f, -10.0f,    0.0f, 1.0f, 0.0f,
-         10.0f,  10.0f, -10.0f,    0.0f, 1.0f, 0.0f,
-         10.0f,  10.0f,  10.0f,    0.0f, 1.0f, 0.0f,
-         10.0f,  10.0f,  10.0f,    0.0f, 1.0f, 0.0f,
-        -10.0f,  10.0f,  10.0f,    0.0f, 1.0f, 0.0f,
-        -10.0f,  10.0f, -10.0f,    0.0f, 1.0f, 0.0f,
+            -10.0f,  10.0f, -10.0f,    0.0f, 1.0f, 0.0f,
+            10.0f,  10.0f, -10.0f,    0.0f, 1.0f, 0.0f,
+            10.0f,  10.0f,  10.0f,    0.0f, 1.0f, 0.0f,
+            10.0f,  10.0f,  10.0f,    0.0f, 1.0f, 0.0f,
+            -10.0f,  10.0f,  10.0f,    0.0f, 1.0f, 0.0f,
+            -10.0f,  10.0f, -10.0f,    0.0f, 1.0f, 0.0f,
     };
 
     Layout lyt;
@@ -78,7 +78,14 @@ void Application::OnUserRun()
     Shader shd("assets/shaders/skybox_reflect.shader");
     Shader cubeshd("assets/shaders/basic_cubemap.shader");
 
-    std::vector<std::string> vec({ /*Insert skybox images(6)*/});
+    std::vector<std::string> vec({
+        "assets/skyboxes/lake/right.jpg",
+        "assets/skyboxes/lake/left.jpg",
+        "assets/skyboxes/lake/bottom.jpg",
+        "assets/skyboxes/lake/top.jpg",
+        "assets/skyboxes/lake/front.jpg",
+        "assets/skyboxes/lake/back.jpg",
+    });
     CubeMap cube(vec, 500.0f);
     cube.BindTexture(1);
     shd.Uniform1i(1, "skybox");
@@ -95,7 +102,6 @@ void Application::OnUserRun()
     while (!m_Window.ShouldClose())
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
         m_Camera.ProcessInput(m_Window, 1.0);
 
         shd.UniformMat4f(m_Camera.GetViewMatrix(), "view");
@@ -104,7 +110,7 @@ void Application::OnUserRun()
         cubeshd.UniformMat4f(glm::mat4(glm::mat3(m_Camera.GetViewMatrix())), "view");
         cubeshd.UniformMat4f(m_Camera.GetProjMatrix(), "proj");
 
-
+        
         cubeobj.Draw(cubeshd);
         obj.Draw(shd);
         m_Window.Update();

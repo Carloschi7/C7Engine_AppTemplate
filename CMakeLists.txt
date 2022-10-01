@@ -24,9 +24,6 @@ if("${VISUAL_STUDIO_DEF}" STREQUAL "Visual Studio")
 
 	set(C7ENGINE_LIB_PATH ${ENGINE_BUILD_PATH}/$(Configuration)/C7Engine.lib)
 
-	#Pasting shared library into build dir, necessary on Windows for our current setup
-	file(COPY ${PROJECT_SOURCE_DIR}/assimpdll/assimp-vc143-mtd.dll DESTINATION ${PROJECT_BINARY_DIR})
-
 else() #default linux ubuntu for now (STILL WORK IN PROGRESS)
 
 	set(UBUNTU_LIB_PATH /usr/lib/x86_64-linux-gnu)
@@ -47,6 +44,11 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 	${ENGINE_PATH}/Dependencies/stbi
 	${ENGINE_PATH}/Dependencies/GLFW
 	${ENGINE_PATH}/Dependencies/GLEW)
+
+if("${VISUAL_STUDIO_DEF}" STREQUAL "Visual Studio")
+	#Pasting shared library into build dir, necessary on Windows for our current setup
+	file(COPY ${PROJECT_SOURCE_DIR}/assimpdll/assimp-vc143-mtd.dll DESTINATION ${PROJECT_BINARY_DIR})
+endif()
 
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/assets/shaders)
 #Copies the assets to the project workspace
