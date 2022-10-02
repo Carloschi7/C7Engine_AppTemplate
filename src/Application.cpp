@@ -1,7 +1,7 @@
 #include "../application/Application.h"
 
 //Template applications, try some of this engine's demos by browsing the cpp
-//files contained in the build folder
+//files contained in the demos folder
 
 Application::Application(Window& window)
         :m_Window(window)
