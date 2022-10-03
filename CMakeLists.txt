@@ -55,5 +55,6 @@ file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/assets/shaders)
 file(COPY assets/shaders DESTINATION assets)
 file(COPY assets/skyboxes DESTINATION assets)
 file(COPY assets/images DESTINATION assets)
+file(COPY assets/models DESTINATION assets)
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
