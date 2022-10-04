@@ -4,6 +4,15 @@
 //Template applications, try some of this engine's demos by browsing the cpp
 //files contained in the demos folder
 
+//Application window generation(required)
+std::unique_ptr<Window> WindowMaker::MakeWindow()
+{
+    /*
+     * PARAMETERS: width, height, application name, is fullscreen
+     * */
+    return std::make_unique<Window>(1920, 1080, "Application", true);
+}
+
 Application::Application(Window& window)
         :m_Window(window)
 {

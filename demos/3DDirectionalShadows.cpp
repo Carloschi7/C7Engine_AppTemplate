@@ -1,5 +1,10 @@
 #include "../application/Application.h"
 
+std::unique_ptr<Window> WindowMaker::MakeWindow()
+{
+    return std::make_unique<Window>(1920, 1080, "Application", true);
+}
+
 Application::Application(Window& window)
     :m_Window(window)
 {
