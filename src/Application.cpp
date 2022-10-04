@@ -14,7 +14,7 @@ std::unique_ptr<Window> WindowMaker::MakeWindow()
 }
 
 Application::Application(Window& window)
-        :m_Window(window)
+    :m_Window(window)
 {
 }
 

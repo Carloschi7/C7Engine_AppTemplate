@@ -89,7 +89,7 @@ void Application::OnUserRun()
         "assets/skyboxes/lake/bottom.jpg",
         "assets/skyboxes/lake/top.jpg",
         "assets/skyboxes/lake/front.jpg",
-        "assets/skyboxes/lake/back.jpg",
+        "assets/skyboxes/lake/back.jpg"
     });
     CubeMap cube(vec, 500.0f);
     cube.BindTexture(1);

@@ -6,7 +6,7 @@ std::unique_ptr<Window> WindowMaker::MakeWindow()
 }
 
 Application::Application(Window& window)
-        :m_Window(window)
+    :m_Window(window)
 {
 }
 
@@ -24,24 +24,20 @@ void Application::OnUserCreate()
 void Application::OnUserRun()
 {
     //Camera setup
-    m_Camera.SetVectors(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f,0.0f, -1.0f));
+    m_Camera.SetVectors(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.0f, -1.0f));
     float fAspectRatio = float(m_Window.Width()) / float(m_Window.Height());
     m_Camera.SetPerspectiveValues(glm::radians(45.0f), fAspectRatio, 0.1f, 1000.0f);
     m_Camera.SetKeyboardFunction(KeyboardForCameraFun);
     m_Camera.SetMouseFunction(MouseForCameraFun);
 
-    m_Models.emplace_back("assets/models/man/FinalBaseMesh.obj");
+    m_Models.emplace_back("assets/models/earth/Earth 2K.fbx");
+    m_Models[0].LoadExternalTexture("assets/models/earth/Textures/Diffuse_2K.png", "diffuse_texture");
 
     //Shader setup
     m_Shaders.emplace_back("assets/shaders/basic_lighting.shader");
     m_Shaders[0].UniformMat4f(m_Camera.GetProjMatrix(), "proj");
 
-    //A random texture for now
-    m_Textures.emplace_back("assets/images/parquet.jpg");
-    m_Textures[0].Bind(0);
-    m_Shaders[0].Uniform1i(0, "diffuse_texture");
-
-    glEnable(GL_DEPTH);
+    glEnable(GL_DEPTH_TEST);
     while (!m_Window.ShouldClose())
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

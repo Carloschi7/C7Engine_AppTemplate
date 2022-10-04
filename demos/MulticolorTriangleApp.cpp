@@ -36,7 +36,7 @@ void Application::OnUserRun()
 	VertexManager manager(verts, sizeof(verts), lyt);
 	Entity obj(manager);
 
-	Shader shd("assets/basic.shader");
+	Shader shd("assets/shaders/basic.shader");
 	shd.UniformMat4f(glm::mat4(1.0f), "model");
 	shd.UniformMat4f(glm::mat4(1.0f), "view");
 	shd.UniformMat4f(glm::mat4(1.0f), "proj");

@@ -84,10 +84,18 @@ void Application::OnUserRun()
 
 	Shader shd("assets/shaders/basic_texture.shader");
     Shader cubeshd("assets/shaders/basic_cubemap.shader");
-    Texture tex(//INSERT a custom image as a texture, true);
+    Texture tex("assets/images/container.png", true);
     shd.Uniform1i(0, "texture1");
 
-    std::vector<std::string> vec({ //INSERT the 6 skybox images });
+    std::vector<std::string> vec ({ 
+       "assets/skyboxes/teide/right.jpg",
+        "assets/skyboxes/teide/left.jpg",
+        "assets/skyboxes/teide/bottom.jpg",
+        "assets/skyboxes/teide/top.jpg",
+        "assets/skyboxes/teide/back.jpg",
+        "assets/skyboxes/teide/front.jpg"
+        });
+
     CubeMap cube(vec, 500.0f);
     cube.BindTexture(1);
     cubeshd.Uniform1i(1, "skybox");

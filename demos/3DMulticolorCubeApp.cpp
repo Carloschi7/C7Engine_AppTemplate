@@ -56,7 +56,7 @@ void Application::OnUserRun()
 	VertexManager manager(verts, sizeof(verts), indices, sizeof(indices), lyt);
 	Entity obj(manager);
 
-	Shader shd("assets/basic.shader");
+	Shader shd("assets/shaders/basic.shader");
 
 	m_Window.SetVsync(true);
 	glEnable(GL_DEPTH_TEST);
