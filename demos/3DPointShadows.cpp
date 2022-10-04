@@ -82,7 +82,7 @@ void Application::OnUserRun()
     VertexManager mgr(vertices, sizeof(vertices), lyt);
 
     Shader shd("assets/shaders/point_shadow.shader");
-    Shader shd_light("assets/shaders/basic_color.shader");
+    Shader shd_light("assets/shaders/basic.shader");
     shd.UniformMat4f(m_Camera.GetProjMatrix(), "proj");
     shd_light.UniformMat4f(m_Camera.GetProjMatrix(), "proj");
 
