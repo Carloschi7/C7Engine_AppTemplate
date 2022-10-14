@@ -76,7 +76,7 @@ project
 
 (Make sure to insert your paths here, e.g. -DENGINE_PATH=D:/Engine -D...)
 
-5) `cmake -DENGINE_PATH="YourEngineSourcePath" -DENGINE_BUILD_PATH="YourEngineBinaryPath" -A Win32 ..`
+5) `cmake -DENGINE_PATH="YourEngineSourcePath" -DENGINE_BUILD_PATH="YourEngineBinaryPath" ..`
 
 
 
