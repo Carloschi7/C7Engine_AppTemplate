@@ -1,4 +1,3 @@
-//Browsing from the C7Engine/engine folder
 #include "../application/Application.h"
 
 //Template applications, try some of this engine's demos by browsing the cpp
@@ -33,7 +32,7 @@ void Application::OnUserCreate()
 //Application variables/application logic
 void Application::OnUserRun()
 {
-    glEnable(GL_DEPTH);
+    glEnable(GL_DEPTH_TEST);
     while (!m_Window.ShouldClose())
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
